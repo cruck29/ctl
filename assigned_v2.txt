@@ -56,8 +56,7 @@ A: No
 	Q(house): How many people are in your household?
 	X:number
 		Q(income): How much income does your household bring in per year in after tax dollars?
-		A[javascript:if (fedpov(getvar('income'),(getvar('house')){ goto('5')] ] else [ goto('4')}]: number
-
+		X[javascript:if (fedpov((getvar('income'),(getvar('house'),100)){ goto('5') } else { goto('4')}]:number
 Q(3): It looks that the client does not qualify due to being above the income range, but there is another requirement that you might meet. Are the disposable income and assets of the client and the members of the client's household insufficient to retain competent private counsel without substantial hardship to the client or the members of the client's household?
 A:  Yes
 	Q(3.1):GOTO:10
