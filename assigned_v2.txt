@@ -6,197 +6,196 @@ Before:<link rel="stylesheet" type="text/css" href="https://suffolklitlab.org/ho
 <p><b>This is a <a href="http://www.codingthelaw.org/">class project</a>. You should not rely on it as a source of legal information. It is likely incomplete.</b></p>
 <p>Answer the following questions to see if someone qualifies for appointment of counsel.</p>
 
+<script>
+function fedpov(house,income,percentage){
+	// Determines if your income is less than or equal to 
+	// a percentage of the 2018 federal poverty guidelines 
+	// for the contiguous United States. See
+	// https://www.federalregister.gov/documents/2018/01/18/2018-00814/annual-update-of-the-hhs-poverty-guidelines
+	
+		var line = NaN;
+	
+		if (house == 1) {
+			line = 12140;
+		} else if (house == 2) {
+			line = 16460;
+		} else if (house == 3) {
+			line = 20780;
+		} else if (house == 4) {
+			line = 25100;
+		} else if (house == 5) {
+			line = 29420;
+		} else if (house == 6) {
+			line = 33740;
+		} else if (house == 7) {
+			line = 38060;
+		} else if (house == 8) {
+			line = 42380;
+		} else if (house > 8) {
+			line = 42380 + (house-8)*4320;
+		}
+	
+		if (income <= (line*(percentage/100))) {
+			return true;
+		} else {
+			return false;
+		}
+	}	
+</script>	
+
 Q(1): Hi! Welcome to the Montana Law Bot that will help you determine if the client qualifies for state appointed counsel and if they can waive their fees.  This process will take about ten minutes.  I will ask you a series of questions and help you along the way.  Got it?
 A:Yes!
 	Q(1.1):GOTO:2
 A: No.
-	Q(1.2):GOTO:33
+	Q(1.2):GOTO:28
 
-Q(2): In order to see if the client qualify as indigent, we first need to know how many people in their household there is.  How many people are in their household?
+Q(2): Do your receive public assistance? 
+A: Yes
+	Q(2.1):GOTO:5
+A: No
+	Q(house): How many people are in your household?
+	X:number
+		Q(income): How much income does your household bring in per year in after tax dollars?
+		A[javascript:if (fedpov(getvar('income'),(getvar('house')){ goto('5')] ] else [ goto('4')}]: number
 
-A: 1
-	Q(2.1):GOTO:3
-
-A:2
-	Q(2.2):GOTO:4
-
-A: 3
-	Q(2.3):GOTO:5
-
-A:4
-	Q(2.4):GOTO:6
-
-A: 5
-	Q(2.5):GOTO:7
-
-Q(3): Is their income less than $16,612?
+Q(3): It looks that the client does not qualify due to being above the income range, but there is another requirement that you might meet. Are the disposable income and assets of the client and the members of the client's household insufficient to retain competent private counsel without substantial hardship to the client or the members of the client's household?
 A:  Yes
 	Q(3.1):GOTO:10
 A: No
-	Q(3.2):GOTO:8
+	Q(3.2):GOTO:28
 
-Q(4): Is their income less than $22,490?
-A:  Yes
-	Q(4.1):GOTO:10
-A: No
-	Q(4.2):GOTO:8
-
-Q(5): Is their income less than $28,369?
-A:  Yes
-	Q(5.1):GOTO:10
-A: No
-	Q(5.2):GOTO:8
-
-Q(6): Is their income less than $34,248?
-A:  Yes
-	Q(6.1):GOTO:10
-A: No
-	Q(6.2):GOTO:8
-
-Q(7): Is your income less than $40,126?
-A:  Yes
-	Q(7.1):GOTO:10
-A: No
-	Q(7.2):GOTO:8
-
-Q(8): It looks that the client does not qualify due to being above the income range, but there is another requirement that you might meet. Are the disposable income and assets of the client and the members of the client's household insufficient to retain competent private counsel without substantial hardship to the client or the members of the client's household?
-A:  Yes
-	Q(8.1):GOTO:10
-A: No
-	Q(8.2):GOTO:9
-
-Q(9): Sorry! It looks like the client do not qualify as an indigent, however, there are some assignments that makes the client qualify for counsel.
+Q(4): Sorry! It looks like the client do not qualify as an indigent, however, there are some assignments that makes the client qualify for counsel.
 A:  Great, take me there!
-	Q(9.1):GOTO:20
+	Q(4.1):GOTO:16
 A: No, I am done.
-	Q(9.2):GOTO:33
+	Q(4.2):GOTO:28
 
-Q(10): Great, it looks like your client qualifies as an indigent.  Now, let's go over the assignments that qualify for counsel at public expense.  Is the client charged with a felony or charged with a misdemeanor for which there is a possibility of incarceration?
+Q(5): Great, it looks like your client qualifies as an indigent.  Now, let's go over the assignments that qualify for counsel at public expense.  Is the client charged with a felony or charged with a misdemeanor for which there is a possibility of incarceration?
+A:  Yes
+	Q(5.1):GOTO:19
+A: No
+	Q(5.2):GOTO:11
+
+Q(6): Is the client a party in a proceeding to determine parentage under the Uniform Parentage Act?
+A:  Yes
+	Q(6.1):GOTO:19
+A: No
+	Q(6.2):GOTO:12
+
+Q(7): Is the client a parent, guardian, or other person with physical or legal custody of a child or youth in any removal, placement, or termination proceeding?
+A:  Yes
+	Q(7.1):GOTO:19
+A: No
+	Q(7.2):GOTO:13
+
+Q(8): Is the client  a petitioner in a habeas corpus proceeding?
+A:  Yes
+	Q(8.1):GOTO:19
+A: No
+	Q(8.2):GOTO:14
+
+Q(9): Is the client a petitioner in a proceeding for postconviction relief?
+A:  Yes
+	Q(9.1):GOTO:19
+A: No
+	Q(9.2):GOTO:15
+
+Q(10): Is the client a witness in a criminal grand jury proceeding?
 A:  Yes
 	Q(10.1):GOTO:19
 A: No
-	Q(10.2):GOTO:11
+	Q(10.2):GOTO:16
 
-Q(11): Is the client a party in a proceeding to determine parentage under the Uniform Parentage Act?
+Q(11): Is the client a respondent in a proceeding for the involuntary commitment of a person for alcoholism?
 A:  Yes
 	Q(11.1):GOTO:19
 A: No
-	Q(11.2):GOTO:12
+	Q(11.2):GOTO:17
 
-Q(12): Is the client a parent, guardian, or other person with physical or legal custody of a child or youth in any removal, placement, or termination proceeding?
+Q(12): Is the client a respondent in a proceeding for involuntary commitment for a mental disorder?
 A:  Yes
 	Q(12.1):GOTO:19
 A: No
-	Q(12.2):GOTO:13
+	Q(12.2):GOTO:18
 
-Q(13): Is the client  a petitioner in a habeas corpus proceeding?
+Q(13): Is the client a parent or guardian in a proceeding for the involuntary commitment of a developmentally disabled person to a residential facility?
 A:  Yes
 	Q(13.1):GOTO:19
 A: No
-	Q(13.2):GOTO:14
+	Q(13.2):GOTO:15
 
-Q(14): Is the client a petitioner in a proceeding for postconviction relief?
+Q(14): Great! It looks like your client qualifies for counsel! Would you like to check if you qualify for fee wavers?
 A:  Yes
-	Q(14.1):GOTO:19
+	Q(14.1):GOTO:24
 A: No
-	Q(14.2):GOTO:15
+	Q(14.2):GOTO:16
 
-Q(15): Is the client a witness in a criminal grand jury proceeding?
+Q(15): There are some qualifiers for clients who are not indigents but can still get counsel.  Is your client  a youth in a proceeding under the Montana Youth Court Act alleging a youth is delinquent or in need of intervention?
 A:  Yes
-	Q(15.1):GOTO:19
+	Q(15.1):GOTO:22
 A: No
-	Q(15.2):GOTO:16
+	Q(15.2):GOTO:17
 
-Q(16): Is the client a respondent in a proceeding for the involuntary commitment of a person for alcoholism?
+Q(16): Is your client a juvenile entitled to assigned counsel in a proceeding under the Interstate Compact on Juveniles?
 A:  Yes
-	Q(16.1):GOTO:19
+	Q(16.1):GOTO:22
 A: No
-	Q(16.2):GOTO:17
+	Q(16.2):GOTO:18
 
-Q(17): Is the client a respondent in a proceeding for involuntary commitment for a mental disorder?
+Q(17): Is your client a minor who petitions for a waiver of parental consent requirements under the Parental Consent for Abortion Act of 2013?
 A:  Yes
-	Q(17.1):GOTO:19
+	Q(17.1):GOTO:22
 A: No
-	Q(17.2):GOTO:18
+	Q(17.2):GOTO:19
 
-Q(18): Is the client a parent or guardian in a proceeding for the involuntary commitment of a developmentally disabled person to a residential facility?
+Q(18): Is your client a respondent in a proceeding for the involuntary commitment of a developmentally disabled person to a residential facility?
 A:  Yes
-	Q(18.1):GOTO:19
+	Q(18.1):GOTO:22
 A: No
 	Q(18.2):GOTO:20
 
-Q(19): Great! It looks like your client qualifies for counsel! Would you like to check if you qualify for fee wavers?
+Q(19): Is your client a minor voluntarily committed to a mental health facility?
 A:  Yes
-	Q(19.1):GOTO:28
+	Q(19.1):GOTO:22
 A: No
-	Q(19.2):GOTO:33
+	Q(19.2):GOTO:21
 
-Q(20): There are some qualifiers for clients who are not indigents but can still get counsel.  Is your client  a youth in a proceeding under the Montana Youth Court Act alleging a youth is delinquent or in need of intervention?
+Q(20): Is your client a ward when the ward’s guardian has filed a petition to require medical treatment for a mental disorder of the ward?
 A:  Yes
-	Q(20.1):GOTO:26
+	Q(20.1):GOTO:22
 A: No
-	Q(20.2):GOTO:21
+	Q(20.2):GOTO:23
 
-Q(21): Is your client a juvenile entitled to assigned counsel in a proceeding under the Interstate Compact on Juveniles?
+Q(21): Great! It looks like your client qualifies for counsel! Would you like to check if you qualify for fee wavers?
 A:  Yes
-	Q(21.1):GOTO:26
+	Q(21.1):GOTO:22
 A: No
-	Q(21.2):GOTO:22
+	Q(21.2):GOTO:23
 
-Q(22): Is your client a minor who petitions for a waiver of parental consent requirements under the Parental Consent for Abortion Act of 2013?
+Q(22): Sorry! It looks like your client does not qualify for free counsel.  Would you like to check if your client qualifies for fee waiver?
 A:  Yes
-	Q(22.1):GOTO:26
+	Q(22.1):GOTO:24
 A: No
 	Q(22.2):GOTO:23
 
-Q(23): Is your client a respondent in a proceeding for the involuntary commitment of a developmentally disabled person to a residential facility?
+Q(23): These questions are to see if your client qualifies for fee waiver.  Is your client represented by an entity that provides free legal services to low-income persons?
 A:  Yes
-	Q(23.1):GOTO:26
+	Q(23.1):GOTO:27
 A: No
-	Q(23.2):GOTO:24
+	Q(23.2):GOTO:25
 
-Q(24): Is your client a minor voluntarily committed to a mental health facility?
+Q(24): Is your client represented by a volunteer/pro bono attorney, and financially eligible for free legal services?
 A:  Yes
-	Q(24.1):GOTO:26
+	Q(24.1):GOTO:27
 A: No
-	Q(24.2):GOTO:25
+	Q(24.2):GOTO:26
 
-Q(25): Is your client a ward when the ward’s guardian has filed a petition to require medical treatment for a mental disorder of the ward?
+Q(25): Is your client one or more of these benefits: SNAP, TANF, SSI, Medicaid, WIC, or/and LIEAP?
 A:  Yes
-	Q(25.1):GOTO:26
+	Q(25.1):GOTO:27
 A: No
 	Q(25.2):GOTO:27
 
-Q(26): Great! It looks like your client qualifies for counsel! Would you like to check if you qualify for fee wavers?
-A:  Yes
-	Q(26.1):GOTO:28
-A: No
-	Q(26.2):GOTO:33
-
-Q(27): Sorry! It looks like your client does not qualify for free counsel.  Would you like to check if your client qualifies for fee waiver?
-A:  Yes
-	Q(27.1):GOTO:28
-A: No
-	Q(27.2):GOTO:33
-
-Q(28): These questions are to see if your client qualifies for fee waiver.  Is your client represented by an entity that provides free legal services to low-income persons?
-A:  Yes
-	Q(28.1):GOTO:31
-A: No
-	Q(28.2):GOTO:29
-
-Q(29): Is your client represented by a volunteer/pro bono attorney, and financially eligible for free legal services?
-A:  Yes
-	Q(29.1):GOTO:31
-A: No
-	Q(29.2):GOTO:30
-
-Q(30): Is your client one or more of these benefits: SNAP, TANF, SSI, Medicaid, WIC, or/and LIEAP?
-A:  Yes
-	Q(30.1):GOTO:31
-A: No
-	Q(30.2):GOTO:32
-
-Q(31): Great, your client qualifies for fee waiver.  Thank you for using the Montana Law Bot!
-Q(32): Sorry, it looks like your client does not qualify for fee waiver.
-Q(33): Thank you for using the Montana Law Bot! Have a nice day.
+Q(26): Great, your client qualifies for fee waiver.  Thank you for using the Montana Law Bot!
+Q(27): Sorry, it looks like your client does not qualify for fee waiver.
+Q(28): Thank you for using the Montana Law Bot! Have a nice day.
