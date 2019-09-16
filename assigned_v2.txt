@@ -53,10 +53,11 @@ Q(2): Do your receive public assistance?
 A: Yes
 	Q(2.1):GOTO:5
 A: No
-	Q(house): In order to see if the client qualify as indigent, we first need to know how many people in their household there is.  How many people are in their household?  "Household" means an association of persons who live in the same dwelling, sharing its furnishings, facilities, accommodations, and expenses.
+	Q(house): In order to see if the client qualify as indigent, we first need to know how many people in their household there is.  
+How many people are in their household?  "Household" means an association of persons who live in the same dwelling, sharing its furnishings, facilities, accommodations, and expenses. 
 	X:number
 		Q(income): How much is the gross household income of your household?  "Gross household income" means all income received by all individuals of a household while they are members of the household. 
-		X[javascript:if (fedpov((getvar('income'),(getvar('house'),100)){ goto('5') } else { goto('4')}]:number
+		X:[javascript:if (fedpov(getvar('house'),getvar('income'),100)){ goto('5') } else { goto('4')}]number
 		
 Q(3): It looks that the client does not qualify due to being above the income range, but there is another requirement that you might meet. Are the disposable income and assets of the client and the members of the client's household insufficient to retain competent private counsel without substantial hardship to the client or the members of the client's household?
 A:  Yes
