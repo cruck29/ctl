@@ -1,89 +1,44 @@
-##Rhode Island Motion to Expunge or Seal App Biography – Camy Ruck
+##Rhode Island Motion to Expunged or Sealed App Biography – Camy Ruck
 
-I created a bot that will help Lisa Gilligan not only increase the amount of potential clients, 
-but also help those potential clients to be informed. The bot will walk clients through a complex form
-that normally Lisa GIlligan would do herself and educate them along the way. This way, the potential 
-clients will be able to move through Lisa Gilligan's intake process faster, and save her from filling out, what she 
-calls "that damn form." LG_Prime can be found at: https://cruck.community.lawyer/interview?i=docassemble.playground1%3AILEOoB4TgkOlKYx1.yml#page1
+I created an app that allows people to apply to expunge or seal their criminal records.  The Rhode Island Public Defenders provide a form for clients to fill and I used that form as the template for this app.  The last section provides helpful information for what to do after clients have filled out the motion, and helpful links where they can get more useful information.  The stakeholders will be any individual who has a criminal record in the state of Rhode Island.  This app will be used by Anchor Recovery Community Center who served an underprivileged community who do not have the resources to pay a lawyer for this service.  In addition, the Rhode Island Public Defenders can use this app to expediate the process and be able to serve more people when they do their community outreach.
+The app can be found at: https://cruck.community.lawyer/interview?i=docassemble.playground1%3AILEOoB4TgkOlKYx1.yml#page1
 
 ##Framing
-Lisa Gilligan runs her own solo practice out of Reading Massachusetts. She has a husband, two children, and two brand new
-grandchildren. Between work and her growing family, Lisa needs to utilize every minute she has. When we first spoke about potential
-projects, I asked her, "What is something you do all the time, that you wish you never had to do again?" she told me "This damn form!" 
-She showed me a seven page packet that she has to go through with each of her clients seeking estate planning advice. This process on 
-average took roughly 30-35 minutes, due to all of the complex legalese within the form, that the clients didnt understand. 
-I created a recource  that would walk clients through this form, educate them on legal issues and then if they wanted, direct them
-to Lisa Gilligan's office. This would give her more clients who were educated and ready to begin, and more time to focus on more cases. 
+Gary St. Laurent works for the Anchor Recovery Community Center helping people who are in recovery.  One of his tasks is to help his clients obtain jobs by giving them the avenues to which they can obtain employment.  However, many of his clients have criminal records and because of that, they are not able to apply to obtain jobs.  Mr. St. Laurent mentioned that even if his clients get all the training and do community service hours, they will still have a criminal record, and that will prevent them from getting a job.  Mr. St. Laurent connected me with Evan Rosin-Pritchard who works at the Rhode Island Public Defender office.  Together, we worked together in a way to implement the paper form available to expunge/seal records, in an easy to use app that will facilitate the process. 
 
 ##Research
-First I had Lisa Gilligan go through the form with me the way that she would with a client. This way I was able to see how she would 
-explain certain concepts, which parts of the form she would emphasize, and how long it would take. Next I looked to see if there
-was already a bot out there that could go through this form. The closest thing I found to a solution was clicking through mass.gov
-and consulting an attorney or clerk. Next, I looked up all of the mpc forms that this form referenced and gained an understanding of what 
-they each required. Finally I looked up the legal language definitions and put them into lay people terms.
+I visited Gary St. Laurent and Evan Rosin-Pritchard at the Anchor Recovery Community Center in Providence, RI.  I went there to meet Evan and Gary and discuss the project further with them.  While I was there, I was able to job-shadow Evan while he had a community outreach at Anchor.  We were there for three hours and were able to see around 10 clients.  While there, I took notes on how the form is done, and the required information that clients need to have.  The time there was very helpful because it gave me first-hand knowledge of the process to apply for expungement/seal and the great need the community has for this type of services.
+I also did further research on expungement law in Rhode Island.  I had to look up the waiting period for felonies, misdemeanors, and other charges.  I also wanted to define ‘convictions’, ‘expungement’, ‘seal’ for those who might not be familiar with those terms.  As a whole, I had to familiarized myself with the state law because that helped setting up the app in an efficient manner.  Before starting this project, I did an internet search to see if any other institutions had some something similar to this app, and I was not able to find any.
 
 ##Ideation & Prototyping
-Considering all of the potential tools for this solution, I narrowed my selection down to Community Lawyer and QnA Markup. Community 
-Lawyer has better accessibility, but I was more familiar with QnA and how to insert javascript functions. Plus, I felt less
-restricted using the QnA tools. I chose QnA because I believed more in my ability to create a better product with this tool. After 
-identifying the proper negative and possitive flows for the questions I would use, I created my very simple QnA prototype, which was a 
-good jumping off point for any refinements identified after user testing.
+I used community.lawyer to this app because I found it very user-friendly, they provide excellent help guide, and also live interaction with the people who worked there.  Since I was using user input to fill out the template, community.lawyer seemed as the best way to facilitate this process.  I thought about using QnA but I felt that I had more flexibility with community.lawyer, including the fact that users can input their signature into the template.  Docassemble was another option, which would have work just as good as community.lawyer, but I felt more comfortable using community.lawyer and more user friendly.
 
 ##User Testing
-After I had finished creating what I thought would be extremely helpful code, I put the product in the hands of a tester named Vasiliki.
-She is a Reasearch Coordinator at Mass General Hospital and works with pateints who have downs sydrome. She has no legal experience and
-had no idea what my vision was for the bot. After 5 minutes i had a handful of notes to improve the bot. Most of the notes included 
-adding more descriptions and definitions. After implementing those changes, I had my roommate Liam test the bot. He is an Associate 
-Producer and works mostly in television or commercials. He has a father who is an Eldr Law Attorney, but has no legal experience himself. 
-Again, he did not know my vision for the bot. Liam sugested that it would be easier for the user to click on the items in the checklist 
-and have the document popup rather than have it lead you to a follow up question asking if they wanted the link. The third user tester 
-was none other than Lisa Gilligan's son, Larry. Larry is a Liquor Merchandiser. Like the previous testers, he has no legal expierence. 
-Unlike the previous two, Larry did have a rough understanding of what my goal was for the bot. Larry was able to give a valusable 
-suggestion; the user should have an option to consult an attorney at multiple stages of LG_Prime.
-
+The first tester was Gary.  He provided excellent feedback as to how to make the app more user-friendly for people with no legal background.  He made the app more easy to follow and I was able to update it like by moving the disclaimer to the bottom and giving more info as to how to get the case number/BCI.
+The second tester was Brittney.  She is a child clinician who works with mothers in recovery in Rhode Island.  Some of her clients have criminal records and she mentioned that that getting her clients’ criminal record expunged helps them get jobs and better financially support their children.  She stated the app was “very cool” and will recommend it to her clients.  She said it was easy to use and understandable.  She corrected minor spelling mistakes.
+The third tester was Alexi.  He works is a yeoman in the Navy.  He provided helpful insight into the layout and accessibility of the app.  He said it was easy to follow and understand.
 
 ###Refinement
-Each time the bot was tested I had the users fill out a standard form I created. It can be found at: *****insert link****. I would 
-review the form soon after it was done and clarify certain questions they had or suggestions they offered. Then I would implement 
-the changes they suggested thatalso would help reach the goal. I started with a simple bot. Then I added javascript and additional 
-resources. Finally I created a function that would allow the user to get documentation of the important information LG_Prime gathered.
-After three rounds of user testing and ******* mark up file variations, LG_Prime is ready for the client, Lisa Gilligan.
-
+I worked closely with Gary and Evan on the initial aspect of the testing.  Gary provided a lot of good feedback in order to create the app more user friendly and understandable.  I updated the app with his comments and suggestions.  
+I also implemented the feedback Brittney and Alexi provided, specially the grammatical errors.
 
 ##Intro Pitch
-The PowerPoint used for my intro pitch can be found at
-**********
+Powerpoint presentation to the class.
 
 ##Complexity/Robustness
-This an extremely robust QnA, which has multiple choice, fill in the balnks, reference call backs, embedded links, 
-javascript features including document creation and more.
+This is a robust application with has multiple choice selection, signature input, definitions, and external links.  The information the client provides is introduced into a PDF file that they are able to print at the end of the assessment.  
 
 ##Impact & Efficiencies
-Because this product was only recently released, it is impossible to tell right now how effective it will truly be. However by
-comparing the old process to using LG_Prime, Lisa Gilligan will now save approximately 25 minutes with each client that uses LG_Prime
-and she will never have to fill out "that damn form" again if she doesnt want to. Save her time means she can either take on more clients,
-focus on more complex issues, or simply spend more time with her family and get a chance to breathe! A laywer's happiness is important 
-too. 
-
+Anchor Recovery Community Center had no way to actively help clients who needed help in this matter.  They would book Evan, once a month, for three hours and he was able to see an average of 10 people.  With this app, Anchor will be able to help clients whenever they need it and as many as they need.  Gary commented that the last time Anchor did a community outreach with other community centers for people to expunge/seal their records, over 75 people signed up but Evan only had 3 hours to help them.  With this app, those problems can be alleviated.  This app will also help with the people who had to do this by hand.  This application can be done in less than 5 minutes if you have the information beforehand.
 
 ##Fit/Completeness
-This bot set out to enable Lisa Gilligan to have more time in her day. For that to happen the bot would have to be prototyped, tested,
-and refined many times (*****) in order to be a relaible tool. As it stands now, it cuts down on client intake by roughtly 25 
-minutes per client. The bot has been scrubbed of confusing legalese and clear definitions have been implemented into the smooth flow
-of use. This bot has accomplished the goals of my client.
-
+This application will enable people to apply to expunge/seal their criminal records.  As of now, there is no other app available for the state of Rhode Island, so this will be a great tool that many people can use.  
 
 ##Documentation
-I have addressed all of the user concerns from the user testing. I have cut down on all unecessary legalese. The bot flows beautifully. 
-Client users will be able to understand what they are being asked and also become comfortable with this portion of the estate planning
-process. My partner would easily be able to dive in and change language once getting additional feedback if necessary and also recieve 
-LG_Prime-gathered information in a digestable way to help her implement the information seemlessly into her representation.
+I have updated the app with the feedback from users.  I also provided external links that people can get more outside information and “notes” where I write either definitions or helpful information that allows people to fill out the application in a clearer form.  I added the ‘waiting period’ requirement at the very beginning so people who do not qualify, do not waste their time doing the application.  I also sited to the website where people in Rhode Island can obtain their criminal records (and case number!), which is a requirement to fill with form out.  I also provided a link to where people can get their BCI at the end.  In addition, at the beginning, I told users around how long the process will take and that they will need access to a printer, so they know that before starting the application.
 
 ##Real World Viability
-This QnA is ready for the real world as-is. Lisa Gilligan and her potential clients could use this bot tomorrow.
+This app can be used today! 
 
 ##Sustainability
-This bot will be only as good as its latest update. Unfortunately, Probate laws, procedures, and forms are subject to change. Luckily,
-the QnA is flexible and implementing new forms or new rules will be simple so long as the person implementing the change is familiar
-with QnA.
-  
+I am good friends with Gary, so in the future if there are any concerns regarding the app, I told him to tell me about it.  I thought about adding a ‘user feedback’ where people can send me messages, but I decided against that because I think people would ask me questions about their case/application, and I don’t think I should be providing those type of services.
